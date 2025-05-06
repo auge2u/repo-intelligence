@@ -1,0 +1,102 @@
+# Configuration for Repository Intelligence Tool
+
+# GitHub organizations to analyze
+organizations:
+  - auge2u
+  - habitusnet
+  - rhelvia
+
+# Filter repositories (optional)
+repository_filter:
+  # If true, only include repositories from the include_list
+  use_include_list: false
+  # Only analyze these repositories (if use_include_list is true)
+  include_list: []
+  # Skip these repositories
+  exclude_list: []
+
+# Output configuration
+output:
+  # Base output directory
+  base_dir: "output"
+  # CTO report output directory
+  cto_report_dir: "output/cto_report"
+  # Portfolio output directory
+  portfolio_dir: "output/portfolio"
+  # Visuals output directory
+  visuals_dir: "output/visuals"
+  # Data output directory
+  data_dir: "output/data"
+
+# GitHub API configuration
+github:
+  # Maximum number of repositories to fetch per organization
+  max_repos: 100
+  # Maximum number of contributors to fetch per repository
+  max_contributors: 50
+  # Maximum number of commits to analyze per repository
+  max_commits: 1000
+
+# Analysis configuration
+analysis:
+  # Technology stack detection
+  tech_stack:
+    # Keywords to look for in README and code files
+    keywords:
+      - typescript
+      - javascript
+      - python
+      - rust
+      - go
+      - golang
+      - react
+      - vue
+      - angular
+      - svelte
+      - nextjs
+      - node.js
+      - express
+      - django
+      - flask
+      - fastapi
+      - aws
+      - azure
+      - gcp
+      - terraform
+      - kubernetes
+      - docker
+      - mongodb
+      - postgresql
+      - mysql
+      - redis
+      - graphql
+      - tailwind
+      - vite
+  
+  # Services detection
+  services:
+    # Keywords to look for in configuration files
+    keywords:
+      - cloudflare
+      - snyk
+      - sentry
+      - github actions
+      - circleci
+      - netlify
+      - vercel
+      - heroku
+      - aws
+      - azure
+
+# Screenshot configuration
+screenshots:
+  # Whether to take screenshots of live projects
+  enabled: true
+  # Timeout in seconds when loading pages
+  page_load_timeout: 10
+  # Browser window width
+  width: 1920
+  # Browser window height
+  height: 1080
+  # Whether to run browser in headless mode
+  headless: true
